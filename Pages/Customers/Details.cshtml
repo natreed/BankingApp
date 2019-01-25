@@ -1,4 +1,4 @@
-﻿@page
+﻿@page "{id:int}"
 @model BankingApp.Pages.Customers.DetailsModel
 
 @{
@@ -22,6 +22,25 @@
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Customer.Phone)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.Account)
+        </dt>
+        <dd>
+            <table class="table">
+                <tr>
+                    <th>Account</th>
+                    <th>Balance</th>
+                </tr>
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => Model.Customer.Account.AccountType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => Model.Customer.Account.Balance)
+                    </td>
+                </tr>
+            </table>
         </dd>
     </dl>
 </div>

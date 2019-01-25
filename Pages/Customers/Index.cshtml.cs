@@ -18,10 +18,16 @@ namespace BankingApp.Pages.Customers
             _context = context;
         }
 
+        public string NameSort { get; set; }
+        public string DateSort { get; set; }
+
         public IList<Customer> Customer { get;set; }
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(string sortOrder)
         {
+            NameSort = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
+            DateSort = sortOrder == "Date" ? "date_desc" : "Date";
+
             Customer = await _context.Customers.ToListAsync();
         }
     }

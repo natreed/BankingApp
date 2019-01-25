@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -8,6 +9,7 @@ namespace BankingApp.Models
         public int ID { get; set; }
         public string Name { get; set; }
         public string Phone { get; set; }
+        public DateTime dateTime { get; set; }
 
         public Account Account { get; set; }
 

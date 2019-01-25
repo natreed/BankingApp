@@ -26,6 +26,19 @@ namespace BankingApp.Pages.Customers
         [BindProperty]
         public Customer Customer { get; set; }
 
+        //public async Task<IActionResult> OnPostAsync()
+        //{
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return Page();
+        //    }
+
+        //    _context.Customers.Add(Customer);
+        //    await _context.SaveChangesAsync();
+
+        //    return RedirectToPage("./Index");
+        //}
+
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
@@ -33,10 +46,19 @@ namespace BankingApp.Pages.Customers
                 return Page();
             }
 
-            _context.Customers.Add(Customer);
-            await _context.SaveChangesAsync();
+            var emptyCustomer = new Customer();
+            //Try update sync ensures input conforms to customer object. Nothing extra.
+            if (await TryUpdateModelAsync<Customer>(
+                emptyCustomer,
+                "customer",   // Prefix for form value.
+                s => s.Name, s => s.Phone))
+            {
+                _context.Customers.Add(emptyCustomer);
+                await _context.SaveChangesAsync();
+                return RedirectToPage("./Index");
+            }
 
-            return RedirectToPage("./Index");
+            return null;
         }
     }
 }

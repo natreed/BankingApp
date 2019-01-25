@@ -27,7 +27,12 @@ namespace BankingApp.Pages.Customers
                 return NotFound();
             }
 
-            Customer = await _context.Customers.FirstOrDefaultAsync(m => m.ID == id);
+           //Customer = await _context.Customers.FirstOrDefaultAsync(m => m.ID == id);
+           Customer = await _context.Customers
+                        .Include(s => s.Account)
+                            .ThenInclude(e => e.Transactions)
+                        .AsNoTracking()
+                        .FirstOrDefaultAsync(m => m.ID == id);
 
             if (Customer == null)
             {

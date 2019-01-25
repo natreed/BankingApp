@@ -97,5 +97,5 @@ C:\Users\User\Desktop\BankingApp\obj\Debug\netcoreapp2.1\BankingApp.csproj.CopyC
 C:\Users\User\Desktop\BankingApp\obj\Debug\netcoreapp2.1\Razor\Pages\Customers\Create.g.cshtml.cs
 C:\Users\User\Desktop\BankingApp\obj\Debug\netcoreapp2.1\Razor\Pages\Customers\Delete.g.cshtml.cs
 C:\Users\User\Desktop\BankingApp\obj\Debug\netcoreapp2.1\Razor\Pages\Customers\Details.g.cshtml.cs
-C:\Users\User\Desktop\BankingApp\obj\Debug\netcoreapp2.1\Razor\Pages\Customers\Edit.g.cshtml.cs
 C:\Users\User\Desktop\BankingApp\obj\Debug\netcoreapp2.1\Razor\Pages\Customers\Index.g.cshtml.cs
+C:\Users\User\Desktop\BankingApp\obj\Debug\netcoreapp2.1\Razor\Pages\Customers\Edit.g.cshtml.cs

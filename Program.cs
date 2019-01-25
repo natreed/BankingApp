@@ -14,27 +14,24 @@ namespace BankingApp
     {
         public static void Main(string[] args)
         {
-            CreateWebHostBuilder(args).Build().Run(); ;
+            var host = CreateWebHostBuilder(args).Build();
 
-            //using (var scope = host.Services.CreateScope())
-            //{
-            //    var services = scope.ServiceProvider;
+            using (var scope = host.Services.CreateScope())
+            {
+                var services = scope.ServiceProvider;
 
-            //    try
-            //    {
-            //        var context = services.GetRequiredService<BankingAppContext>();
-            //        context.Database.;
-            //        DBContextInitializer.Initialize(context);
+                try
+                {
+                    var context = services.GetRequiredService<BankingAppContext>();
+                }
+                catch (Exception e)
+                {
+                    var logger = services.GetRequiredService<ILogger<Program>>();
+                    logger.LogError(e, "Error in Database Creation");
+                }
+            }
 
-            //    }
-            //    catch (Exception e)
-            //    {
-            //        var logger = services.GetRequiredService<ILogger<Program>>();
-            //        logger.LogError(e, "Error in Database Creation");
-            //    }
-            //}
-
-            //host.Run();
+            host.Run();
         }
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>

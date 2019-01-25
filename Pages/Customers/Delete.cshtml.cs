@@ -20,20 +20,29 @@ namespace BankingApp.Pages.Customers
 
         [BindProperty]
         public Customer Customer { get; set; }
+        public String ErrorMessage { get; set; }
 
-        public async Task<IActionResult> OnGetAsync(int? id)
+        public async Task<IActionResult> OnGetAsync(int? id, bool? saveChangesError = false)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            Customer = await _context.Customers.FirstOrDefaultAsync(m => m.ID == id);
+            Customer = await _context.Customers
+                .AsNoTracking()
+                .FirstOrDefaultAsync(m => m.ID == id);
 
             if (Customer == null)
             {
                 return NotFound();
             }
+
+            if (saveChangesError.GetValueOrDefault())
+            {
+                ErrorMessage = "Delete failed. Try again";
+            }
+
             return Page();
         }
 
@@ -44,15 +53,27 @@ namespace BankingApp.Pages.Customers
                 return NotFound();
             }
 
-            Customer = await _context.Customers.FindAsync(id);
+            var student = await _context.Customers
+                            .AsNoTracking()
+                            .FirstOrDefaultAsync(m => m.ID == id);
 
-            if (Customer != null)
+            if (student == null)
             {
-                _context.Customers.Remove(Customer);
-                await _context.SaveChangesAsync();
+                return NotFound();
             }
 
-            return RedirectToPage("./Index");
+            try
+            {
+                _context.Customers.Remove(student);
+                await _context.SaveChangesAsync();
+                return RedirectToPage("./Index");
+            }
+            catch (DbUpdateException /* ex */)
+            {
+                //Log the error (uncomment ex variable name and write a log.)
+                return RedirectToAction("./Delete",
+                                     new { id, saveChangesError = true });
+            }
         }
     }
 }

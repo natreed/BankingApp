@@ -9,6 +9,7 @@ namespace BankingApp.Models
     {
         [ForeignKey("Customer")]
         public int AccountID { get; set; }
+        public int AccountType { get; set; }
         public Double Balance { get; set; }
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
