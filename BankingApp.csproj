@@ -7,7 +7,7 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.EntityFrameworkCore">
-      <Version>2.1.1</Version>
+      <Version>2.1.4</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design">
       <Version>2.1.1</Version>
@@ -21,28 +21,8 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools.DotNet">
       <Version>2.0.3</Version>
     </PackageReference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Remove="Pages\Persons\Create.cs" />
-    <Compile Remove="Pages\Persons\Create.cshtml.cs" />
-    <Compile Remove="Pages\Persons\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Remove="Pages\Persons\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="Pages\Persons\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Remove="Pages\Persons\**" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <_ContentIncludedByDefault Remove="Pages\Persons\Create.cshtml" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.1" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.6.0" />
   </ItemGroup>
 
 </Project>
