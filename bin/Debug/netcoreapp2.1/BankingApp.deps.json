@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "72f43ce61a6044cb46f4c0f40a8b43b6576c4a8d"
+    "signature": "4f1ea3302c1f8d6eb1490073031509d5d5fe8ffa"
   },
   "compilationOptions": {
     "defines": [
@@ -32,6 +32,7 @@
           "Microsoft.EntityFrameworkCore.Tools.DotNet": "2.0.3",
           "Microsoft.NETCore.App": "2.1.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.1.1",
+          "Microsoft.Xrm.Sdk.2015": "7.1.0.1085",
           "System.Data.SqlClient": "4.6.0"
         },
         "runtime": {
@@ -440,6 +441,17 @@
         },
         "compile": {
           "lib/netstandard2.0/Microsoft.VisualStudio.Web.CodeGenerators.Mvc.dll": {}
+        }
+      },
+      "Microsoft.Xrm.Sdk.2015/7.1.0.1085": {
+        "runtime": {
+          "lib/net452/Microsoft.Xrm.Sdk.dll": {
+            "assemblyVersion": "7.0.0.0",
+            "fileVersion": "7.1.0.1085"
+          }
+        },
+        "compile": {
+          "lib/net452/Microsoft.Xrm.Sdk.dll": {}
         }
       },
       "NETStandard.Library/2.0.3": {
@@ -3739,6 +3751,13 @@
       "sha512": "sha512-LhsJrKf4fMqOyaVqAexbpkR6GmHDuVeek+s1NFGwFYFZAgSbnLmBt8DIw41zGbEXO/GYiPLTOTA7F1fJknsf6g==",
       "path": "microsoft.visualstudio.web.codegenerators.mvc/2.1.1",
       "hashPath": "microsoft.visualstudio.web.codegenerators.mvc.2.1.1.nupkg.sha512"
+    },
+    "Microsoft.Xrm.Sdk.2015/7.1.0.1085": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-bNdTBn4HvR2yOlor7PzqbwMYxxO8RAuppmelltN2BHUAu4q98IdJ69ZfFjqW3FM7cN2w2DV/15Zmn4ciLRxq4g==",
+      "path": "microsoft.xrm.sdk.2015/7.1.0.1085",
+      "hashPath": "microsoft.xrm.sdk.2015.7.1.0.1085.nupkg.sha512"
     },
     "NETStandard.Library/2.0.3": {
       "type": "package",

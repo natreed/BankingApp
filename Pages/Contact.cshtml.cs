@@ -12,7 +12,7 @@ namespace BankingApp.Pages
 
         public void OnGet()
         {
-            Message = "Your contact page.";
+            Message = "To make a job offer or request a follow-up interview.";
         }
     }
 }

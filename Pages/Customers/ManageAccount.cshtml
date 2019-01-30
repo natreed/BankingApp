@@ -1,15 +1,28 @@
 ﻿@page "{id:int?}"
-@model BankingApp.Pages.Customers.DetailsModel
+@model BankingApp.Pages.Customers.ManageAccountModel
 
 @{
-    ViewData["Title"] = "Details";
+    ViewData["Title"] = "ManageAccount";
 }
 
-<h2>Details</h2>
+<h2>ManageAccount</h2>
 
 <div>
     <h4>Customer</h4>
     <hr />
+    <div>
+        <a asp-page="./Edit" asp-route-id="@Model.Customer.ID">Edit</a> |
+        <a asp-page="./Index">Back to List</a>
+        <div>
+            <form method="post">
+                <div class="form-group">
+                    <input asp-page-handler="Logout" type="submit" value="Logout" class="btn btn-default" />
+                </div>
+            </form>
+            
+        </div>
+    </div>
+
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Customer.FirstName)
@@ -42,11 +55,32 @@
             @Html.DisplayFor(model => model.Customer.customerAge)
         </dd>
     </dl>
+    <br />
+    <dl class="dl-horizontal">
+        <dt>Account Balance</dt>
+        <dd>@Model.AccountBalance</dd>
+    </dl>
+
+    <form method="post">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="DepositAmount" class="control-label"></label>
+            <input asp-for="DepositAmount" class="form-control" />
+            <span asp-validation-for="DepositAmount" class="text-danger"></span>
+            <input asp-page-handler="Deposit" type="submit" value="Deposit" class="btn btn-default" />
+        </div>
+        <div class="form-group">
+            <label asp-for="WithdrawAmount" class="control-label"></label>
+            <input asp-for="WithdrawAmount" class="form-control" />
+            <span asp-validation-for="WithdrawAmount" class="text-danger"></span>
+            <input asp-page-handler="Withdraw" type="submit" value="Withdraw" class="btn btn-default" />
+        </div>
+    </form>
     <table class="table">
         <thead>
             <tr>
                 <th>
-                    ID
+                    Transaction ID
                 </th>
                 <th>
                     Date
@@ -75,16 +109,9 @@
                     <td>
                         @Html.DisplayFor(modelItem => item.EndBalance)
                     </td>
-                </tr>       
+                </tr>
             }
         </tbody>
-        
     </table>
-
-
-
 </div>
-<div>
-    <a asp-page="./Edit" asp-route-id="@Model.Customer.ID">Edit</a> |
-    <a asp-page="./Index">Back to List</a>
-</div>
+

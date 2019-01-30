@@ -15,14 +15,29 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="Customer.ID" />
             <div class="form-group">
-                <label asp-for="Customer.Name" class="control-label"></label>
-                <input asp-for="Customer.Name" class="form-control" />
-                <span asp-validation-for="Customer.Name" class="text-danger"></span>
+                <label asp-for="Customer.FirstName" class="control-label"></label>
+                <input asp-for="Customer.FirstName" class="form-control" />
+                <span asp-validation-for="Customer.FirstName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customer.LastName" class="control-label"></label>
+                <input asp-for="Customer.LastName" class="form-control" />
+                <span asp-validation-for="Customer.LastName" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="Customer.Phone" class="control-label"></label>
                 <input asp-for="Customer.Phone" class="form-control" />
                 <span asp-validation-for="Customer.Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customer.startDate" class="control-label"></label>
+                <input asp-for="Customer.startDate" class="form-control" />
+                <span asp-validation-for="Customer.startDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Customer.customerAge" class="control-label"></label>
+                <input asp-for="Customer.customerAge" class="form-control" />
+                <span asp-validation-for="Customer.customerAge" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-default" />
@@ -34,7 +49,3 @@
 <div>
     <a asp-page="./Index">Back to List</a>
 </div>
-
-@section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
-}

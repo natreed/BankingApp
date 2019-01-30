@@ -9,6 +9,8 @@ namespace BankingApp.Models
         {
         }
 
+        //InMemoryAccounts inMemAccounts = new InMemoryAccounts();
+
         public DbSet<BankingApp.Models.Customer> Customers { get; set; }
         public DbSet<BankingApp.Models.Account> Accounts { get; set; }
         public DbSet<BankingApp.Models.Transaction> Transactions { get; set; }

@@ -1,31 +1,33 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Collections.Generic;
 
 namespace BankingApp.Models
 {
+    /// <summary>
+    /// A single transaction is tied to 1 account.
+    /// </summary>
     public class Transaction
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int TransactionID { get; set; }
-        public float StartBalance { get; set; }
-        public float TransactionAmount { get; set; }
-        public float EndBalance { get; set; }
+
+        public int AccountID { get; set; }
+
+        [Column(TypeName = "money")]
+        public decimal StartBalance { get; set; }
+
+        [Column(TypeName = "money")]
+        public decimal TransactionAmount { get; set; }
+
+        [Column(TypeName = "money")]
+        public decimal EndBalance { get; set; }
 
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}")]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd hh:mm:ss tt}")]
         public DateTime TransactionTime { get; set; }
 
+        //NAVIGATION
+        public Account Account { get; set; }
     }
-
-    //public class Course
-    //{
-    //    [DatabaseGenerated(DatabaseGeneratedOption.None)]
-    //    public int CourseID { get; set; }
-    //    public string Title { get; set; }
-    //    public int Credits { get; set; }
-
-    //    public ICollection<Enrollment> Enrollments { get; set; }
-    //}
 }

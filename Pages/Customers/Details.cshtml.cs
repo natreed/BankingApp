@@ -9,6 +9,9 @@ using BankingApp.Models;
 
 namespace BankingApp.Pages.Customers
 {
+    /// <summary>
+    /// Displays all of the Customer details.
+    /// </summary>
     public class DetailsModel : PageModel
     {
         private readonly BankingApp.Models.BankingAppContext _context;
@@ -27,10 +30,9 @@ namespace BankingApp.Pages.Customers
                 return NotFound();
             }
 
-           //Customer = await _context.Customers.FirstOrDefaultAsync(m => m.ID == id);
-           Customer = await _context.Customers
-                        .Include(s => s.Account)
-                            .ThenInclude(e => e.Transactions)
+            Customer = await _context.Customers
+                        .Include(a => a.Account)
+                            .ThenInclude(t => t.Transactions)
                         .AsNoTracking()
                         .FirstOrDefaultAsync(m => m.ID == id);
 

@@ -6,7 +6,6 @@
 }
 
 <h2>Delete</h2>
-<p class="text-danger">@Model.ErrorMessage</p>
 
 <h3>Are you sure you want to delete this?</h3>
 <div>
@@ -14,16 +13,34 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Customer.Name)
+            @Html.DisplayNameFor(model => model.Customer.FirstName)
         </dt>
         <dd>
-            @Html.DisplayFor(model => model.Customer.Name)
+            @Html.DisplayFor(model => model.Customer.FirstName)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.LastName)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Customer.LastName)
         </dd>
         <dt>
             @Html.DisplayNameFor(model => model.Customer.Phone)
         </dt>
         <dd>
             @Html.DisplayFor(model => model.Customer.Phone)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.startDate)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Customer.startDate)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Customer.customerAge)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Customer.customerAge)
         </dd>
     </dl>
     

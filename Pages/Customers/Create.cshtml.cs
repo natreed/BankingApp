@@ -9,6 +9,11 @@ using BankingApp.Models;
 
 namespace BankingApp.Pages.Customers
 {
+    /// <summary>
+    /// Creates a new account with a zero starting balance:
+    /// TODO: There is no way to access your account if you forget your password:(
+    /// </summary>
+    [BindProperties]
     public class CreateModel : PageModel
     {
         private readonly BankingApp.Models.BankingAppContext _context;
@@ -23,22 +28,19 @@ namespace BankingApp.Pages.Customers
             return Page();
         }
 
-        [BindProperty]
         public Customer Customer { get; set; }
+        public Account Account { get; set; }
 
-        //public async Task<IActionResult> OnPostAsync()
-        //{
-        //    if (!ModelState.IsValid)
-        //    {
-        //        return Page();
-        //    }
-
-        //    _context.Customers.Add(Customer);
-        //    await _context.SaveChangesAsync();
-
-        //    return RedirectToPage("./Index");
-        //}
-
+        /// <summary>
+        /// Adds customer to database.
+        /// TODO: Right now a customer only has one account. This is to keep the 
+        /// model simple. Here the account is set to checking as a default. There 
+        /// is currently nothing stopping a customer from creating accounts with the 
+        /// same name and password. If this happens, the first account
+        /// in the query will be used. This could cause problems, if by chance two customers had
+        /// the same first and last names and the same password. 
+        /// </summary>
+        /// <returns></returns>
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
@@ -46,19 +48,17 @@ namespace BankingApp.Pages.Customers
                 return Page();
             }
 
-            var emptyCustomer = new Customer();
-            //Try update sync ensures input conforms to customer object. Nothing extra.
-            if (await TryUpdateModelAsync<Customer>(
-                emptyCustomer,
-                "customer",   // Prefix for form value.
-                s => s.Name, s => s.Phone))
-            {
-                _context.Customers.Add(emptyCustomer);
-                await _context.SaveChangesAsync();
-                return RedirectToPage("./Index");
-            }
+            Account.AccountType = AccountType.CHECKING;
+            Account.Balance = 0;
+            Account.InitialTransactionDate = DateTime.Now;
+            Account.Customer = Customer;
 
-            return null;
+            Customer.Account = Account;
+
+            _context.Customers.Add(Customer);
+            await _context.SaveChangesAsync();
+
+            return RedirectToPage("./Login");
         }
     }
 }

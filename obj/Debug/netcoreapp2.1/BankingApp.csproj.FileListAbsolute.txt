@@ -80,6 +80,13 @@ C:\Users\User\Desktop\BankingApp\obj\Debug\netcoreapp2.1\BankingApp.TagHelpers.o
 C:\Users\User\Desktop\BankingApp\obj\Debug\netcoreapp2.1\BankingApp.RazorCoreGenerate.cache
 C:\Users\User\Desktop\BankingApp\obj\Debug\netcoreapp2.1\Razor\Pages\About.g.cshtml.cs
 C:\Users\User\Desktop\BankingApp\obj\Debug\netcoreapp2.1\Razor\Pages\Contact.g.cshtml.cs
+C:\Users\User\Desktop\BankingApp\obj\Debug\netcoreapp2.1\Razor\Pages\Customers\Create.g.cshtml.cs
+C:\Users\User\Desktop\BankingApp\obj\Debug\netcoreapp2.1\Razor\Pages\Customers\Delete.g.cshtml.cs
+C:\Users\User\Desktop\BankingApp\obj\Debug\netcoreapp2.1\Razor\Pages\Customers\Details.g.cshtml.cs
+C:\Users\User\Desktop\BankingApp\obj\Debug\netcoreapp2.1\Razor\Pages\Customers\Edit.g.cshtml.cs
+C:\Users\User\Desktop\BankingApp\obj\Debug\netcoreapp2.1\Razor\Pages\Customers\Index.g.cshtml.cs
+C:\Users\User\Desktop\BankingApp\obj\Debug\netcoreapp2.1\Razor\Pages\Customers\Login.g.cshtml.cs
+C:\Users\User\Desktop\BankingApp\obj\Debug\netcoreapp2.1\Razor\Pages\Customers\ManageAccount.g.cshtml.cs
 C:\Users\User\Desktop\BankingApp\obj\Debug\netcoreapp2.1\Razor\Pages\Error.g.cshtml.cs
 C:\Users\User\Desktop\BankingApp\obj\Debug\netcoreapp2.1\Razor\Pages\Index.g.cshtml.cs
 C:\Users\User\Desktop\BankingApp\obj\Debug\netcoreapp2.1\Razor\Pages\Privacy.g.cshtml.cs
@@ -94,8 +101,3 @@ C:\Users\User\Desktop\BankingApp\obj\Debug\netcoreapp2.1\BankingApp.Views.pdb
 C:\Users\User\Desktop\BankingApp\obj\Debug\netcoreapp2.1\BankingApp.dll
 C:\Users\User\Desktop\BankingApp\obj\Debug\netcoreapp2.1\BankingApp.pdb
 C:\Users\User\Desktop\BankingApp\obj\Debug\netcoreapp2.1\BankingApp.csproj.CopyComplete
-C:\Users\User\Desktop\BankingApp\obj\Debug\netcoreapp2.1\Razor\Pages\Customers\Create.g.cshtml.cs
-C:\Users\User\Desktop\BankingApp\obj\Debug\netcoreapp2.1\Razor\Pages\Customers\Delete.g.cshtml.cs
-C:\Users\User\Desktop\BankingApp\obj\Debug\netcoreapp2.1\Razor\Pages\Customers\Details.g.cshtml.cs
-C:\Users\User\Desktop\BankingApp\obj\Debug\netcoreapp2.1\Razor\Pages\Customers\Index.g.cshtml.cs
-C:\Users\User\Desktop\BankingApp\obj\Debug\netcoreapp2.1\Razor\Pages\Customers\Edit.g.cshtml.cs

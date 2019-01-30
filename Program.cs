@@ -23,6 +23,10 @@ namespace BankingApp
                 try
                 {
                     var context = services.GetRequiredService<BankingAppContext>();
+                    if (context.Database.EnsureCreated())
+                    {
+                        DBContextInitializer.Initialize(context);
+                    }
                 }
                 catch (Exception e)
                 {
