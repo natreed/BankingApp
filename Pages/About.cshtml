@@ -15,30 +15,31 @@
     <li>See transaction history</li>
     <li>Logout</li>
 </ol>
-
 <p>
-    This project was developed in response to a request for a code sample for Company 'X'.
+    This excercise was developed in response to a request for a code sample for Company 'X'.
     The homework was to create a banking application with a backend implemented in C#.
     The task did not require implementing a front end (a CLI would have been sufficient).
-    But since I had not worked with asp.net before or played around with database frameworks at all really,
-    I thought I might learn something by playing around with the asp.net core framework.
-    I think it still checks all the boxes of the requirements as well.
+    But since I had not worked with asp before, I thought I'd try using asp.net core mvc for the 
+    and the entity framework for my database context.
 </p>
-
 <p>
-    This app demonstrates basic operations of opening an account, logging in, checking balance, making a deposit or withdrawal, checking transaction
-    history and logging out. Additionally you can update user information or delete accounts.
+    This app only demonstrates basic operations of opening an account, logging in, checking balance, making a deposit or withdrawal, checking transaction
+    history and logging out. Additionally you can edit and delete accounts.
 </p>
-
 <p>
-    I kept the Schema as simple as possible. 
-    Some separation of tables was necessary to store user info and password separately.
-    All data is accessed and updated through the Customer entity.
+    Since this was not a database excercise I kept the Schema as simple as possible. All data is accessed and updated through the Customer entity. I
+    also did not make speed or efficiency a concern. My method was store and retrieve data by any means. Requests are first come first serve. There is
+    no need for a strategy to handle simultaneous requests in this case because of the one to one relationship between a customer and an account.
+    (i.e. only one customer should be able to make changes). In a more realistic scenario, there would be automatic deposits and withdrawals coming
+    from credit card companies, utilities, employers, etc. And that would be a full-on database project.
+
 </p>
-
 <p>
-    If you would like to know more about this project, comment, or make suggestions I'd be happy to discuss.
-    Click contact info at the top if you are interested.
+    If you would like to know more about this project, comment, or make suggestions I'm open to discussion. Click contact info if you are interested.
+    If you come to the conclusion that I should look for another line of work, I'd like to hear that too:)
+</p>
+<p>
+    Thank you for taking a look!
 </p>
 
 
