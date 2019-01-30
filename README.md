@@ -1,14 +1,12 @@
 # Bank Account App in Asp.Net Core
 
-This project was developed in response to a request for a code sample for Company 'X'. 
+This excercise was developed in response to a request for a code sample for Company 'X'. 
 The homework was to create a banking application with a backend implemented in C#.
 The task did not require implementing a front end (a CLI would have been sufficient). 
-But since I had not worked with asp.net before or, 
-I thought I'd try using asp.net core mvc for the and entity framework for my database context.  
-I think it still checks all the boxes of the requirements as well.
+But since I had not worked with asp before, I thought I'd try using asp.net core mvc for the and the entity framework for my database context.  
 
 This app only demonstrates basic operations of opening an account, logging in, checking balance, making a deposit or withdrawal, checking transaction
-history and logging out. 
+history and logging out. Additionally
 
 Since this was not a database excercise I kept the Schema as simple as possible. All data is accessed and updated through the Customer entity. I 
 also did not make speed or efficiency a concern. My method was store and retrieve data by any means. Requests are first come first serve. There is
@@ -27,7 +25,7 @@ Visual Studio 2017.
 This project runs on ASP.NET Core 2.1, EntityFrameworkCore2.1.4
 
 ## Getting Started
-# This program has only been tested on a Windows 10 system using Internet Explorer!
+### This program has only been tested on a Windows 10 system using Internet Explorer!
 ```
 - Clone the repository.
 - Open Visual Studio 2017
@@ -44,10 +42,18 @@ list at the bottom of the page.
 
 ## Notes on running the program
 
+Don't forget your password! There is no implementation for password recovery. That's what password 
+managers are for!
+
 There is no overdraft protection at this bank.
 
 If you do something 'illegal', such as try to withdraw more 
 than your account balance, you may find that nothing happens. This behavior is intentional. 
+
+If you click on 'Customers' you will notice that at the end of each customer entry, there is an 
+option to delete the customer. This will remove the customer and account completely from the database.
+Just pretend, if you do this, that you are the banker and you are closing the account on the behalf of a 
+customer.
 
 ### Testing
 
