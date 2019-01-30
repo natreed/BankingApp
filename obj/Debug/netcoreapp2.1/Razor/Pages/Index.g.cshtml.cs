@@ -66,7 +66,7 @@ using BankingApp;
             ");
             EndContext();
             BeginContext(337, 50, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "2f9a05c1196d486c937f95b4de881a86", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "109e15d644d1463d9b8f438db9ecb2d9", async() => {
                 BeginContext(369, 14, true);
                 WriteLiteral("Create Account");
                 EndContext();
@@ -88,7 +88,7 @@ using BankingApp;
             WriteLiteral("\r\n            <br />\r\n            ");
             EndContext();
             BeginContext(421, 40, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "52463b002a944581b4d2b667e15552fe", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c79e56205bc04a42840692c220251a8e", async() => {
                 BeginContext(452, 5, true);
                 WriteLiteral("Login");
                 EndContext();

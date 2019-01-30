@@ -50,7 +50,8 @@
                 @Html.DisplayFor(modelItem => item.customerAge)
             </td>
             <td>
-                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> 
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a>
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete Account</a>
             </td>
         </tr>
 }

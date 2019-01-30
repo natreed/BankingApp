@@ -58,7 +58,7 @@
     <br />
     <dl class="dl-horizontal">
         <dt>Account Balance</dt>
-        <dd>@Model.AccountBalance</dd>
+        <dd>$@Model.AccountBalance</dd>
     </dl>
 
     <form method="post">
@@ -76,6 +76,8 @@
             <input asp-page-handler="Withdraw" type="submit" value="Withdraw" class="btn btn-default" />
         </div>
     </form>
+    <br />
+    <h2>Transaction History</h2>
     <table class="table">
         <thead>
             <tr>
@@ -104,10 +106,10 @@
                         @Html.DisplayFor(modelItem => item.TransactionTime)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.TransactionAmount)
+                        $@Html.DisplayFor(modelItem => item.TransactionAmount)
                     </td>
                     <td>
-                        @Html.DisplayFor(modelItem => item.EndBalance)
+                        $@Html.DisplayFor(modelItem => item.EndBalance)
                     </td>
                 </tr>
             }

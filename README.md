@@ -3,95 +3,72 @@
 This project was developed in response to a request for a code sample for Company 'X'. 
 The homework was to create a banking application with a backend implemented in C#.
 The task did not require implementing a front end (a CLI would have been sufficient). 
-But since I had not worked with asp.net before or played around with database frameworks at all really, 
-I thought I might learn something by playing around with the asp.net core framework. 
+But since I had not worked with asp.net before or, 
+I thought I'd try using asp.net core mvc for the and entity framework for my database context.  
 I think it still checks all the boxes of the requirements as well.
 
 This app only demonstrates basic operations of opening an account, logging in, checking balance, making a deposit or withdrawal, checking transaction
 history and logging out. 
 
-I kept the Schema as simple as possible. All data is accessed and updated through the Customer entity. 
+Since this was not a database excercise I kept the Schema as simple as possible. All data is accessed and updated through the Customer entity. I 
+also did not make speed or efficiency a concern. My method was store and retrieve data by any means. Requests are first come first serve. There is
+no need for a strategy to handle simultaneous requests in this case because of the one to one relationship between a customer and an account.
+(i.e. only one customer should be able to make changes). In a more realistic scenario, there would be automatic deposits and withdrawals coming
+from credit card companies, utilities, employers, etc. And that would be a full-on database project.
 
 If you would like to know more about this project, comment, or make suggestions I'm open to discussion. Click contact info if you are interested.
+If you come to the conclusion that I should look for another line of work, I'd like to hear that too:)
 
-
-## Getting Started
-- Clone the repository.
-```
-- Open Visual Studio 2017
-- Build by locating the Directory and running BankingApp.csproj
-- Run the project. (To look at seeded table entries, go to /Data/DBContextInitializer)
-```
-
-
-
+Thank you for taking a look!
 
 ### Prerequisites
 
 Visual Studio 2017.
-This project runs on EntityFrameworkCore2.1.4
+This project runs on ASP.NET Core 2.1, EntityFrameworkCore2.1.4
 
-### Installing
-
-A step by step series of examples that tell you how to get a development env running
-
-Say what the step will be
-
+## Getting Started
+# This program has only been tested on a Windows 10 system using Internet Explorer!
 ```
-Give the example
-```
-
-And repeat
-
-```
-until finished
-```
-
-End with an example of getting some data out of the system or using it for a little demo
-
-## Running the tests
-
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
+- Clone the repository.
+- Open Visual Studio 2017
+- Build by locating the Directory and running BankingApp.csproj
+- Run the project. (To look at seeded table entries, go to /Data/DBContextInitializer)
+- Click on the 'Customers' link in the navbar to see the seeded customer data.
+- Click home in the navbar and then click the Create Customer link to create a new customer.
+- At the Login prompt enter your new customer (first name, last name, and password).
+- This should open the account management page for that customer. (The current balance should be 0.00)
+- Make updates or withdrawals using the provided fields.
+- The account balance should update in real time and a transaction line should appear in the transaction
+list at the bottom of the page.
 ```
 
-### And coding style tests
+## Notes on running the program
 
-Explain what these tests test and why
+There is no overdraft protection at this bank.
+
+If you do something 'illegal', such as try to withdraw more 
+than your account balance, you may find that nothing happens. This behavior is intentional. 
+
+### Testing
 
 ```
-Give an example
+- Made sure links work!
+- Made sure that when customer logs out, they need to log back in to access account.
+- Tested starting with brand new database, adding a customer and logging in updating account/customer information.
+- Tested for bad input or illegal operations in the ManageAccount window.
+- A better testing strategy might be the hypothetical next step.
+- All testing to this point has been manual (OUCH).
 ```
 
-## Deployment
+## Known Bugs
+```
+- Security: If you logout of your account and the last url is a post-handler (i.e onPostDeposit()), the page displays a 'this page was just here a second ago message'. Explorer allows 
+a 'retry' that seems to by-pass reloading the page and in doing so misses the user verification step in the onGet method.
+		- An easy fix might be to exit the program entirely on logout.
+```
+## Author
 
-Add additional notes about how to deploy this on a live system
-
-## Built With
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
-
-## Versioning
-
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
-
-## Authors
-
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
-
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
+* **Nathan Reed** - *Initial work* - (https://github.com/natreed/BankingApp)
 
 ## License
 
@@ -99,6 +76,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* Inspiration taken from the Microsoft ASP.NET Core Razor tutorial. * https://docs.microsoft.com/en-us/aspnet/core/tutorials/razor-pages/razor-pages-start?view=aspnetcore-2.2&tabs=visual-studio
